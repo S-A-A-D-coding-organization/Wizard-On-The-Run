@@ -10,7 +10,7 @@ import DataBase as db
 
 
 def execute(): # when this function is executed, the game will start # ToDo
-    pass
+    pass  # Delete this
 
 
 
