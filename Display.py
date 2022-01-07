@@ -17,3 +17,7 @@ class Game:  # when executed the games gui start working
     def screen_update(self):  # refreshes the display every time
         # ToDo
         pass  # Delete this
+
+    def colition(self):  # checks for colitions
+        # ToDo
+        pass  # Delete this
