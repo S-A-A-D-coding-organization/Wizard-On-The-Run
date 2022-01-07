@@ -9,7 +9,7 @@ import Ground
 import DataBase as db
 
 
-class Game():  # when executed the games gui start working
+class Game:  # when executed the games gui start working
     def __init__(self):  # loads and prepaires all the data for the class
         # ToDo
 
