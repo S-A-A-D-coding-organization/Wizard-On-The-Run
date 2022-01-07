@@ -1,5 +1,5 @@
 """
-This file is the file which always runs first.
+This script always runs first.
 It Starts the project and executes all the code to run the game.
 """
 
