@@ -24,7 +24,4 @@ class Path:
 
     def path_generator(self):  # it generates the path with the info from spider_generator and returns it to the display
         self.x = self.x - 1
-        #print(self.x)
-        '''if self.x == -600:
-            self.x = self.x + 600'''
         return self.x
