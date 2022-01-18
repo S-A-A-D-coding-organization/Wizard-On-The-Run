@@ -3,7 +3,7 @@ reads and writes data from data\Data.txt
 """
 
 
-def open_Data(): # this function reades the data from a txt ans saves it in a dictionary
+def open_Data(): # this function reads the data from a txt ans saves it in a dictionary
     # ToDo
     pass  # Delete this
 

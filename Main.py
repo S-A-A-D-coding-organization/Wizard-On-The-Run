@@ -7,10 +7,15 @@ It Starts the project and executes all the code to run the game.
 # imports
 import Display
 import DataBase as db
-
+"""
+programed by: crypto-a(Ali Rahbar)
+Date: January 18
+"""
 
 def execute(): # when this function is executed, the game will start # ToDo
-    pass  # Delete this
+    Program = Display.Game()
+    Program.start_page()
+    Program.screen_update()
 
 
 
