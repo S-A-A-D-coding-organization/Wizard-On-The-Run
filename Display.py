@@ -34,13 +34,14 @@ class Game:  # when executed the games gui start working
         bg_sound.play()
 
     def start_page(self):  # this shows the start page before starting the game
-
-        self.screen.fill((255, 255, 255))
+        db.db_prep()
+        self.screen.fill((255, 255,255))
         pygame.display.flip()
         time.sleep(0.5)
 
         self.screen.blit(self.logo, (200, 180))
         pygame.display.flip()
+
         time.sleep(2)
 
         self.play_music()
