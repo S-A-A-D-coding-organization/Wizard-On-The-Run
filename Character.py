@@ -19,14 +19,21 @@ class Persona:
 
     def jump(self):  # used for the jumping
         def run():
-            for i in range (1, 201):
-                if i <= 100:
+            for i in range(1, 401):
+                if i < 200:
                     self.pos = self.pos - 1
-                elif i > 100:
-                    self.pos = self.pos + 1
-                time.sleep(0.005)
+                elif i > 200:
+                    self.pos = self.pos + 1.5
+                    if self.pos > 370:
+                        break
+                time.sleep(0.003)
 
-        t = threading.Thread(target=run)
-        t.start()
+            db.save('Jump', False)
+
+        if not db.call('Jump'):
+            t = threading.Thread(target=run)
+            t.start()
+            db.save('Jump', True)
+
     def movment(self):  # returns the movment info, uses data from self.jump()
         self.screen.blit(self.char,(100, self.pos))
