@@ -75,15 +75,24 @@ class Game:  # when executed the games gui start working
         self.ground_2 = 1280
         self.ground_3 = 2560
 
+        character = Character.Persona(self.screen, 700, 550)
+
         # screen loop
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:  # the quit settings
                     pygame.quit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_UP:
+                        character.jump()
+
             pos = self.ground.path_generator()
             self.screen.blit(self.bg, (pos + self.ground_1, 0))
             self.screen.blit(self.bg, (pos + self.ground_2, 0))
             self.screen.blit(self.bg, (pos + self.ground_3, 0))
+
+            character.movment()
+
             pygame.display.update()
 
             # loop conditions
