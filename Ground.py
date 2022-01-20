@@ -5,6 +5,9 @@ This scripts processes and generates the path for the Dino
 # imports
 import pygame
 import DataBase as db
+import threading
+import time
+import spider
 
 """
 programed by: crypto-a(Ali Rahbar)
@@ -18,10 +21,6 @@ class Path:
         self.bg = bg
         self.spider = spider
         self.x = 0
-    def spider_generator(self):  # it returns random spiders in diffrent positions and sizes
-        # ToDo
-        pass  # Delete this
-
     def path_generator(self):  # it generates the path with the info from spider_generator and returns it to the display
-        self.x = self.x - 1
+        self.x = self.x - 2
         return self.x

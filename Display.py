@@ -9,6 +9,8 @@ import Character
 import Ground
 import DataBase as db
 import time
+import spider
+
 
 """
 programed by: crypto-a(Ali Rahbar)
@@ -34,7 +36,6 @@ class Game:  # when executed the games gui start working
         bg_sound.play()
 
     def start_page(self):  # this shows the start page before starting the game
-        db.db_prep()
         self.screen.fill((255, 255,255))
         pygame.display.flip()
         time.sleep(0.5)
@@ -76,6 +77,8 @@ class Game:  # when executed the games gui start working
         self.ground_3 = 2560
 
         character = Character.Persona(self.screen, 700, 550)
+        anti_char_1 = spider.Spider(self.screen, 1280)
+        anti_char_2 = spider.Spider(self.screen, 1800)
 
         # screen loop
         while True:
@@ -91,9 +94,13 @@ class Game:  # when executed the games gui start working
             self.screen.blit(self.bg, (pos + self.ground_2, 0))
             self.screen.blit(self.bg, (pos + self.ground_3, 0))
 
+            anti_char_1.spider_update()
+            anti_char_2.spider_update()
+
             character.movment()
 
-            pygame.display.update()
+
+            pygame.display.flip()
 
             # loop conditions
             if (pos + self.ground_1) == -1280:
