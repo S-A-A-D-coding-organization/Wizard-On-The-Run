@@ -23,4 +23,5 @@ class Path:
         self.x = 0
     def path_generator(self):  # it generates the path with the info from spider_generator and returns it to the display
         self.x = self.x - 2
+        db.save('total_score', (self.x * -1)//100)
         return self.x

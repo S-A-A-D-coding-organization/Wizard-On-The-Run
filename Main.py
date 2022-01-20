@@ -15,9 +15,6 @@ Date: January 18
 def execute(): # when this function is executed, the game will start
     Program = Display.Game()
     Program.start_page()
-    Program.screen_update()
-
-
 
 # Do not edit this part of the code
 if __name__ == "__main__": # This script starts the Program
