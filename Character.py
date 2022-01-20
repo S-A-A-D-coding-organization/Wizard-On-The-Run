@@ -9,8 +9,8 @@ import threading
 import time
 
 
-class Persona:
-    def __init__(self, screen, width, height): # loads and prepaires all the data for the class
+class Persona: #this class is to render the wizard image and also is used for the jumping animation for the wizard
+    def __init__(self, screen, width, height): # loads and prepaires all the data for the class this is for the charecters and the spider to appear onto the main code
         self.char = pygame.image.load("img/character/wizard.png")
         self.screen = screen
         self.width = width

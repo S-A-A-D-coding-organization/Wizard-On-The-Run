@@ -2,15 +2,12 @@
 reads and writes data from data\Data.db
 """
 
-import sqlite3
+import sqlite3 #this is a server-less database
 
 connection = sqlite3.Connection('data/Data.db')
 cursor = connection.cursor()
 
 # To restart the game
-
-
-
 
 def call(id):  # This function will call the information by their id
     cursor.execute("SELECT * FROM game_info WHERE info_id=?", (id,))
