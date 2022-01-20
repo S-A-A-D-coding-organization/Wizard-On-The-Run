@@ -77,7 +77,8 @@ class Game:  # when executed the games gui start working
         self.ground_3 = 2560
 
         character = Character.Persona(self.screen, 700, 550)
-        object = spider.Spider(self.screen)
+        anti_char_1 = spider.Spider(self.screen, 1280)
+        anti_char_2 = spider.Spider(self.screen, 1800)
 
         # screen loop
         while True:
@@ -93,10 +94,13 @@ class Game:  # when executed the games gui start working
             self.screen.blit(self.bg, (pos + self.ground_2, 0))
             self.screen.blit(self.bg, (pos + self.ground_3, 0))
 
-            character.movment()
-            object.spider_update()
+            anti_char_1.spider_update()
+            anti_char_2.spider_update()
 
-            pygame.display.update()
+            character.movment()
+
+
+            pygame.display.flip()
 
             # loop conditions
             if (pos + self.ground_1) == -1280:
