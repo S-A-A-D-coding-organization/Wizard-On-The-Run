@@ -25,7 +25,9 @@ class Game:  # when executed the games gui start working
         self.screen = pygame.display.set_mode(res)
         self.logo = pygame.image.load('img/logo/logo.png')
         self.bg = pygame.image.load('img/background/ground.jpeg')
+        self.icon = pygame.image.load('icon.ico')
         pygame.display.set_caption("Wizard on The Run")
+        pygame.display.set_icon(self.icon)
 
     def path_generator(self):  # it generates the path with the info from spider_generator and returns it to the display
         db.save('background', db.call('background') - 2)
@@ -53,6 +55,7 @@ class Game:  # when executed the games gui start working
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:  # the quit settings
                     db.save('running', False)
+                    pygame.quit()
                 elif event.type == pygame.MOUSEBUTTONDOWN and pos:  # if button is clicked
                     db.save('running', False)
                     break
@@ -106,7 +109,7 @@ class Game:  # when executed the games gui start working
             character.movment()
 
             self.screen.blit(pygame.font.SysFont('comicsans', 20).render('score: ' + str(db.call('total_score')), True, (0, 0, 0)),
-                             (600, 10))
+                             (580, 10))
 
             pygame.display.flip()
 

@@ -4,22 +4,29 @@ File structure:
 	
 	DinoGame
 	|
-	|
-	+ data
-	| |
-	| + Data.txt
-	|
 	+ img
 	| |
 	| + bacground
 	| | |
 	| | + ground.jpeg
 	| | |
-	| | + spider.jpeg
+	| | + spider.png
 	| | 
 	| + character
+	| | |
+	| | + character.png
+	| | |
+	| | + wizard.png
+	| | |
+	| | + icon.png
+	| |
+        | + logo
 	|   |
-	|   + character.jpeg
+	|   + logo_raw.png
+	|   |
+	|   + logo.png
+	|
+	+ button.py
 	|
 	+ Character.py
 	|
@@ -27,8 +34,12 @@ File structure:
 	|
 	+ Display.py
 	|
-	+ Ground.py
-	|
 	+ Main.py
+	|
+	+ spider.py
+	|
+	+ icon.ico
+	|
+	+ requierments.txt
 	|
 	+ README.md
