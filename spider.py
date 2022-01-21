@@ -10,6 +10,7 @@ class Spider:
         self.screen = screen
         self.spider = pygame.transform.scale(pygame.image.load('img/background/spider.png'), (160, 80))
         self.spider_sound = pygame.mixer.Sound('sounds/spider.mp3')
+
     def spider_update(self):
         if db.call('spider_2') - 100 < db.call('spider_1'):
             db.save('spider_2',
