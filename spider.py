@@ -20,10 +20,10 @@ class Spider:
             db.save('spider_1',
                     random.randint(852, 1280) if db.call('spider_1') < -160 else db.call('spider_1') - 5)
 
-        if 705 >= db.call('spider_1') >= 700:
+        if 704 >= db.call('spider_1') >= 700:
             self.spider_sound.play()
 
-        if 705 >= db.call('spider_1') >= 700:
+        if 704 >= db.call('spider_1') >= 700:
             self.spider_sound.play()
 
         self.screen.blit(self.spider, (db.call('spider_1'), 450))

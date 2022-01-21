@@ -21,11 +21,11 @@ class Persona:  # this class is to render the wizard image and also is used for 
         def run():
             jump_sound = pygame.mixer.Sound('sounds/jump.mp3')  # play music
             jump_sound.play()
-            for i in range(1, 301):
-                if i < 150:
-                    db.save('pos', db.call('pos') - 1)
-                elif i > 150:
-                    db.save('pos', db.call('pos') + 1.5)
+            for i in range(1, 170):
+                if i < 85:
+                    db.save('pos', db.call('pos') - 2.5)
+                elif i > 85:
+                    db.save('pos', db.call('pos') + 3.125)
                     if db.call('pos') > 370:
                         break
                 time.sleep(0.003)

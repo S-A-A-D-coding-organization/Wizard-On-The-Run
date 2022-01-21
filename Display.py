@@ -51,7 +51,7 @@ class Game:  # when executed the games gui start working
             pos = (play_button.is_over(pygame.mouse.get_pos()) == True)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:  # the quit settings
-                    pygame.quit()
+                    db.save('running', False)
                 elif event.type == pygame.MOUSEBUTTONDOWN and pos:  # if button is clicked
                     db.save('running', False)
                     break
@@ -99,8 +99,22 @@ class Game:  # when executed the games gui start working
             db.save('ground_2', db.call('ground_2') + 3840) if (pos + db.call('ground_2') == -1280) else None
             db.save('ground_3', db.call('ground_3') + 3840) if (pos + db.call('ground_3') == -1280) else None
 
+            if self.collision(db.call('spider_1'), db.call('pos')) or self.collision(db.call('spider_1'),
+                                                                                  db.call('pos')):  # Delsin Gibbs
+                break
             time.sleep(0.005)
 
-    def colition(self):  # checks for coalitions
-        # ToDo
-        pass  # Delete this
+        self.end_screen()
+
+    def collision(self, spiderx, charectorY):  # checks for coalitions
+        # checking for collision(HARD CODED)
+        if spiderx >= -60 and spiderx <= 210 and charectorY >= 370 and charectorY <= 450:  # checking to see if the wizard hits the spider
+            # The first part of his if staement is checking if the back of the spider is tounching the back of the wizard. It is -60 becuase the back of the wizard is at 100 and the length of the spider is 160
+            # the second part of this if statement is checking if the front of the wizard is touching the front of the spider
+            # the last two parts are checking if the wizard is jumping over the spider or landing in the spider
+            return True  # if the if statement above is true return true
+
+        return False  # if not return false
+
+    def end_screen(self):
+        pygame.quit()
