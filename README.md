@@ -2,7 +2,7 @@
 
 File structure:
 	
-	DinoGame
+	Wizard-On-The-Run
 	|
 	+ img
 	| |
